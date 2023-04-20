@@ -14,7 +14,8 @@ pipeline {
     }
 
   stage('Check Git Secrets') {            
-      steps {                              
+      steps {     
+           sh 'pip --version'                         
            sh 'trufflehog --json https://github.com/NUMAR-1234/DevSecOps-Pipeline.git > trufflehog'                
            sh 'cat trufflehog'            
       }        
