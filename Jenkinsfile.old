@@ -15,6 +15,7 @@ pipeline {
 
   stage('Check Git Secrets') {            
       steps { 
+           sh 'which trufflehog'
            sh 'export PATH=$PATH:/var/lib/jenkins/.local/bin'    
            sh 'pip --version'
            sh 'pip install trufflehog'                         
