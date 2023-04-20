@@ -20,6 +20,13 @@ pipeline {
            sh 'cat trufflehog'            
       }        
 }
+  stage ('Dependency check') {
+      steps {
+          sh 'dependency-check.sh --project DevSecOps Pipeline --scan https://github.com/NUMAR-1234/DevSecOps-Pipeline.git  --out json'
+      }
+  }
+
+
     stage ('Build') {
       steps {
       sh 'mvn clean package'
