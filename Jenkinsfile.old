@@ -22,6 +22,7 @@ pipeline {
 }
   stage ('Dependency check') {
       steps {
+          sh 'cd /dependency-check/bin'
           sh './dependency-check.sh --project DevSecOps Pipeline --scan https://github.com/NUMAR-1234/DevSecOps-Pipeline.git  --out json'
       }
   }
