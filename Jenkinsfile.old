@@ -22,7 +22,7 @@ pipeline {
 }
   stage ('Dependency check') {
       steps {
-          sh 'cd /dependency-check/bin'
+          sh 'cd /var/lib/jenkins/dependency-check/bin'
           sh 'pwd'
           sh './dependency-check.sh dep-check --scan /home/ec2-user/DevSecOps-Pipeline/ --out sample.html'
       }
