@@ -25,7 +25,5 @@ pipeline {
                 sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/DevSecOps-Pipeline/target*.war ec2-user@54.151.65.10:/home/ec2-user/apache-tomcat-9.0.74/webapps/webapp.war'
               }      
            }       
-    }        
-    }
   }
 }
