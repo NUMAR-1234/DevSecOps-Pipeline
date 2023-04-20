@@ -12,7 +12,13 @@ pipeline {
             ''' 
       }
     }
-    
+
+  stage('Check Git Secrets') {            
+      steps {                              
+           sh 'trufflehog --json https://github.com/NUMAR-1234/DevSecOps-Pipeline.git > trufflehog'                
+           sh 'cat trufflehog'            
+      }        
+}
     stage ('Build') {
       steps {
       sh 'mvn clean package'
